@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+#  product-service:
+#    container_name: product-service
+#    build: .
+#    env_file:
+#      - .env
+#    environment:
+#      - SPRING_DATA_MONGODB_URI=${MONGO_URI}
+#      - PORT=${PORT}
+#    depends_on:
+#      mongo:
+#        condition: service_healthy
+#    ports:
+#      - "3001:3000"
+#    networks:
+#      - app_net
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app_net
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+networks:
+  app_net:

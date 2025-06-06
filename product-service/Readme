@@ -1,0 +1,9 @@
+. mvn clean package -DskipTests
+. Edit configuration to pass .env into application.yaml
+
+Maven
+. config lombok before map-struct
+. map-struct # Mapping dto to entity
+. testcontainer-bom # Define version for all testcontainer
+. testcontainer-mongodb
+. testcontainer-junit-jupiter
