@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql
+    restart: always
+    container_name: mysql
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "3306:3306"
+    networks:
+      - app_net
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+networks:
+  app_net:
