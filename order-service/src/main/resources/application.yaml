@@ -14,3 +14,5 @@ spring:
   data:
     jdbc:
       dialect: mysql
+server:
+  port: ${SERVER_PORT}
