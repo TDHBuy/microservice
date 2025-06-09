@@ -11,8 +11,10 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @Testcontainers
 @AutoConfigureMockMvc
 class OrderServiceApplicationTests {
+	
 	@DynamicPropertySource
 	static void properties(DynamicPropertyRegistry registry) {
+
 	}
 	@Test
 	void contextLoads() {
