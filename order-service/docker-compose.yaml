@@ -4,7 +4,7 @@ services:
   mysql:
     image: mysql
     restart: always
-    container_name: mysql
+    container_name: mysql-order
     env_file:
       - .env
     volumes:

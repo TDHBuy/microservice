@@ -16,3 +16,8 @@ spring:
       dialect: mysql
 server:
   port: ${SERVER_PORT}
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
